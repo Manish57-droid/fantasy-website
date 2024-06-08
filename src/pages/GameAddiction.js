@@ -32,7 +32,7 @@ const GameAddiction = () => {
         </p>
       </Content>
       <ImageContainer>
-        <img src="/manish-fantasy/public/awareness.png" alt="Game Addiction Awareness" />
+        <img src="/awareness1.png" alt="Game Addiction Awareness" />
       </ImageContainer>
     </Section>
   );

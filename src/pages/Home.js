@@ -6,9 +6,9 @@ import styled from 'styled-components';
 const Home = () => {
   return (
     <Section>
-      <div>
-        <img src="/manish-fantasy/src/pages/awareness.png" alt="" srcset="" />
-      </div>
+      <Banner>
+        <img src="/awareness.png" alt="Banner" />
+      </Banner>
       <Hero>
         <HeroText>Welcome to Manish Fantasy</HeroText>
       </Hero>
@@ -51,6 +51,24 @@ const Section = styled.section`
   padding: 20px;
   @media (max-width: 768px) {
     padding: 10px;
+  }
+`;
+
+const Banner = styled.div`
+  width: 100%;
+  margin-bottom: 20px;
+  height: 300px; /* Adjust the height to make the banner smaller */
+  overflow: hidden; /* Hide overflow to crop the image */
+
+  img {
+    width: 100%;
+    height: 100%; /* Make sure the image takes the full height */
+    object-fit: cover; /* Ensure the image covers the entire banner area */
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    height: 200px; /* Adjust height for smaller screens */
   }
 `;
 

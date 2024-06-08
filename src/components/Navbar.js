@@ -9,7 +9,6 @@ const Navbar = () => {
     <Nav>
       <Logo><StyledLink to="/Home">Manish Fantasy</StyledLink></Logo>
       <NavLinks>
-      <StyledLink to="/Home">Home</StyledLink>
         <StyledLink to="/about-us">About Us</StyledLink>
         <StyledLink to="/terms-and-conditions">Terms and Conditions</StyledLink>
         <StyledLink to="/privacy-policy">Privacy Policy</StyledLink>

@@ -19,7 +19,7 @@ const AboutUs = () => {
         </p>
       </Content>
       <ImageContainer>
-        <img src="/team.jpg" alt="Our Team" />
+        <img src="/awareness1.png" alt="Our Team" />
       </ImageContainer>
     </Section>
   );
