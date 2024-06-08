@@ -1,5 +1,3 @@
-// src/components/Footer.js
-
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -39,9 +37,11 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <DownloadButton href="/sample.pdf" download>
-        Download File
-      </DownloadButton>
+      <LeftSection>
+        <DownloadButton href="/sample.pdf" download>
+          Download File
+        </DownloadButton>
+      </LeftSection>
       <FooterContent>
         <FooterLinks>
           <StyledLink to="/about-us">About Us</StyledLink>
@@ -78,12 +78,21 @@ const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+`;
+
+const LeftSection = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
   }
 `;
 
@@ -127,6 +136,7 @@ const FooterLinks = styled.div`
 const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }

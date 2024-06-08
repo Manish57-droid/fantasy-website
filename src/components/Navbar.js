@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <Nav>
-      <Logo><StyledLink to="/Home">Manish Fantasy</StyledLink></Logo>
+      <Logo><StyledLink to="/">Manish Fantasy</StyledLink></Logo>
       <NavLinks>
         <StyledLink to="/about-us">About Us</StyledLink>
         <StyledLink to="/terms-and-conditions">Terms and Conditions</StyledLink>
