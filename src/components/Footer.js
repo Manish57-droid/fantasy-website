@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState({ text: '', isError: false });
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,11 +27,11 @@ const Footer = () => {
     emailjs.send(serviceID, templateID, templateParams, userID)
       .then((response) => {
         console.log('Email successfully sent!', response.status, response.text);
-        setMessage('Joining link sent to your email!');
+        setMessage({ text: 'Joining link sent to your email!', isError: false });
       })
       .catch((err) => {
         console.error('Failed to send email.', err);
-        setMessage('Failed to send joining link. Please try again.');
+        setMessage({ text: 'Failed to send joining link. Please try again.', isError: true });
       });
   };
 
@@ -52,6 +52,7 @@ const Footer = () => {
         <FooterInfo>
           <p>&copy; 2024 Manish Fantasy. All rights reserved.</p>
           <p>Contact us at <a href="mailto:contact@manishfantasy.com">contact@manishfantasy.com</a></p>
+          <BlinkingText>Best Fantasy Play</BlinkingText>
         </FooterInfo>
         <JoinUsContainer>
           <JoinUsForm onSubmit={handleFormSubmit}>
@@ -64,7 +65,7 @@ const Footer = () => {
             />
             <JoinUsButton type="submit">Join Us</JoinUsButton>
           </JoinUsForm>
-          {message && <Message>{message}</Message>}
+          {message.text && <Message isError={message.isError}>{message.text}</Message>}
         </JoinUsContainer>
       </FooterContent>
     </FooterContainer>
@@ -153,6 +154,20 @@ const FooterInfo = styled.div`
   }
 `;
 
+const BlinkAnimation = keyframes`
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+`;
+
+const BlinkingText = styled.p`
+  font-size: 1.2rem;
+  animation: ${BlinkAnimation} 2s infinite;
+`;
+
 const JoinUsContainer = styled.div`
   margin-top: 20px;
   width: 100%;
@@ -199,7 +214,7 @@ const JoinUsButton = styled.button`
 
 const Message = styled.p`
   margin-top: 10px;
-  color: ${props => (props.error ? 'red' : 'green')};
+  color: ${props => (props.isError ? 'red' : 'green')};
 `;
 
 export default Footer;

@@ -1,13 +1,12 @@
-// src/components/Navbar.js
-
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <Nav>
       <Logo><StyledLink to="/">Manish Fantasy</StyledLink></Logo>
+      <BlinkingText>Welcome to Manish Fantasy</BlinkingText>
       <NavLinks>
         <StyledLink to="/about-us">About Us</StyledLink>
         <StyledLink to="/terms-and-conditions">Terms and Conditions</StyledLink>
@@ -53,6 +52,20 @@ const StyledLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const blinkAnimation = keyframes`
+  0%, 50%, 100% {
+    color: rgb(255, 0, 0); /* Red */
+  }
+  25%, 75% {
+    color: rgb(0, 255, 0); /* Green */
+  }
+`;
+
+const BlinkingText = styled.p`
+  font-size: 1.2rem;
+  animation: ${blinkAnimation} 2s infinite;
 `;
 
 export default Navbar;
