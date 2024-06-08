@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
   return (
     <Section>
       <Content>
-        <h2>Terms and Conditions</h2>
+        <h1>Terms and Conditions</h1>
         <p>
           Welcome to Manish Fantasy. By accessing or using our website, you agree to be bound by these terms and conditions. Please read them carefully.
         </p>

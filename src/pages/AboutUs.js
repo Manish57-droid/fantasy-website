@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <Section>
       <Content>
-        <h2>About Us</h2>
+        <h1>About Us</h1>
         <p>
           Welcome to Manish Fantasy! Our mission is to create an immersive and engaging fantasy world where players can explore, battle, and create their own adventures. We are passionate about providing a rich gaming experience that combines stunning visuals, compelling storylines, and dynamic gameplay.
         </p>

@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
   return (
     <Section>
       <Content>
-        <h2>Privacy Policy</h2>
+        <h1>Privacy Policy</h1>
         <p>
           Manish Fantasy is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.
         </p>

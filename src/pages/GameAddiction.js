@@ -7,7 +7,7 @@ const GameAddiction = () => {
   return (
     <Section>
       <Content>
-        <h2>Game Addiction</h2>
+        <h1>Game Addiction</h1>
         <p>
           At Manish Fantasy, we are dedicated to creating a fun and engaging environment for our players. However, we also recognize the importance of promoting healthy gaming habits and addressing the issue of game addiction.
         </p>
